@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  multi-pod.json: |-
+{{ .Files.Get "configs/multi-pod.json" | indent 4 }}
+  mashlib-dev.json: |-
+{{ .Files.Get "configs/mashlib-dev.json" | indent 4 }}
+  file.json: |-
+{{ .Files.Get "configs/file.json" | indent 4 }}
+  file-no-setup.json: |-
+{{ .Files.Get "configs/file-no-setup.json" | indent 4 }}
+  penny.json: |-
+{{ .Files.Get "configs/penny.json" | indent 4 }}
